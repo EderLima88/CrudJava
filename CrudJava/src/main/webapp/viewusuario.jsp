@@ -7,16 +7,14 @@
 <body>
 
 	<%@page import="com.crudjava.dao.UsuarioDao, com.crudjava.bean.*, java.util.*"  %>
-   <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	
 	<h1>Listagem de Usuários</h1>
 	
 	<%
-	
 	List<Usuario> list = UsuarioDao.getAllUsuarios();
-	request.setAttribute("list", list);
-	
+	request.setAttribute("list", list);	
 	%>
 	
 	<table border="1">
@@ -25,12 +23,9 @@
 				<td>ID</td>
 				<td>Nome</td>
 				<td>Password</td>
-				<!-- <td>Password</td> -->
 				<td>email</td>
 				<td>Sexo</td>
 				<td>Pais</td>
-				<!-- <td>Editar</td>
-				<td>Excluir</td> -->
 				</tr>
 		</thead>
 		
@@ -50,7 +45,6 @@
 				<td><a href="deleteusuario.jsp?id=${usuario.getId()}">Excluir</a></td>
 			
 			</tr>
-	
 			</c:forEach>
 			</tr>
 
@@ -60,6 +54,5 @@
 	<br>
 	<a href=addusuarioform.jsp>Adicionar novo usuário</a>
 	
-
 </body>
 </html>
